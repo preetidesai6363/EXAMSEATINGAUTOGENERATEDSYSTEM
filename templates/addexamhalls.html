@@ -1,0 +1,69 @@
+{% extends "adminhome.html" %}
+{% block content %}
+<img src="/static/backgroundone.jpg" class="card-img" alt="..." style="height:35rem;">
+<div class="card-img-overlay">
+    <center style="margin-top:2rem;">
+        <center style="margin-top:2rem;">
+            <form class="form-control" action="{% url 'addexamhalls' %}" method="post" style="text-align: center;">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+                <h3>Add Exam Hall Page</h3>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ form.Date.label_tag }}
+                            {{ form.Date }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.branches.label_tag }}
+                            {{ form.branches }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.noofrooms.label_tag }}
+                            {{ form.noofrooms }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.benchseats.label_tag }}
+                            {{ form.benchseats }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ form.starttime.label_tag }}
+                            {{ form.starttime }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.endtime.label_tag }}
+                            {{ form.endtime }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.year.label_tag }}
+                            {{ form.year }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.noofbenches.label_tag }}
+                            {{ form.noofbenches }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.semester.label_tag }}
+                            {{ form.semester }}
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </center>
+    </center>
+</div>
+{% endblock %}

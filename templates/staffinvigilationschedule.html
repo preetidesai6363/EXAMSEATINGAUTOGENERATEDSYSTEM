@@ -1,0 +1,64 @@
+{% extends "staffhome.html" %}
+{% block content %}
+
+
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: black;
+    }
+</style>
+<table>
+    <th>Id</th>
+    <th>Class One</th>
+    <th>Class Two</th>
+    <th>Class Three</th>
+    <th>Class Four</th>
+
+    <th>Class Five</th>
+    <th>Class Six</th>
+    <th>Class Seven</th>
+    <th>Class Eight</th>
+    <th>Faculty</th>
+    {% for i in dc %}
+    <tr>
+
+        <td>{{i.id}}</td>
+        <td>{{i.classone}}</td>
+        <td>{{i.classtwo}}</td>
+        <td>{{i.classthree}}</td>
+        <td>{{i.classfour}}</td>
+        <td>{{i.classfive}}</td>
+        <td>{{i.classsix}}</td>
+        <td>{{i.classseven}}</td>
+        <td>{{i.classeight}}</td>
+        <td>{{i.facultyemail}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

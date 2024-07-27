@@ -1,0 +1,55 @@
+{% extends "studenthome.html" %}
+{% block content %}
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="card-img-overlay">
+    <div class="row">
+        <center>
+            {% for i in data %}
+            <div class="card" style="width:20rem;margin-top:5rem;">
+                <div class="card-body">
+                    <h6 class="card-title">Student Email : {{ i.Student_Email }}</h6>
+                    <h6 class="card-title">Student Branch : {{ i.Branch }}</h6>
+                    <h6 class="card-title">Student Room No : {{i.RoomNo}}</h6>
+                    <h6 class="card-title">Bench No: {{ i.BenchNo }}</h6>
+                    <h6 class="card-title">Seat No : {{i.SeatNumber}}</h6>
+                    <h6 class="card-title">Date : {{i.date}}</h6>
+                    <h6 class="card-title">Date : {{i.starttime}}</h6>
+                    <h6 class="card-title">Date : {{i.endtime}}</h6>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </center>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

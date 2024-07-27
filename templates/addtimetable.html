@@ -1,0 +1,90 @@
+{% extends "adminhome.html" %}
+{% block content %}
+
+<img src="/static/backgroundone.jpg" class="card-img" alt="..." style="height:35rem;">
+<div class="card-img-overlay">
+    <center style="margin-top:2rem;">
+        <center style="margin-top:2rem;">
+            <form class="form-control" action="{% url 'addtimetable' %}" method="post" enctype="multipart/form-data"
+                style="text-align: center;">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+
+                <h3>Add Time Table Page</h3>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ form.facultyemail.label_tag }}
+                            {{ form.facultyemail}}
+                        </div>
+                        <div class="form-group">
+                            {{ form.classone.label_tag }}
+                            {{ form.classone }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.classtwo.label_tag }}
+                            {{ form.classtwo }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.classthree.label_tag }}
+                            {{ form.classthree }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.classfour.label_tag }}
+                            {{ form.classfour }}
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ form.branch.label_tag }}
+                            {{ form.branch }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.classfive.label_tag }}
+                            {{ form.classfive }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.classsix.label_tag }}
+                            {{ form.classsix }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.classseven.label_tag }}
+                            {{ form.classseven }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.classeight.label_tag }}
+                            {{ form.classeight }}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </center>
+    </center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

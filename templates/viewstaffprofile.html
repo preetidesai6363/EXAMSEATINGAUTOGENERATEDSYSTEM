@@ -1,0 +1,39 @@
+{% extends "staffhome.html" %}
+{% block content %}
+
+
+
+<div class="card-img-overlay">
+    <div class="row">
+        <center>
+            {% for i in all_faculty %}
+            <div class="card" style="width:30rem;">
+                <center>
+                    <img src="/static/profiles/{{i.profilename}}" class="card-img-top" alt="..."
+                        style="width:294px;height:196px;border-radius:100px;">
+                    <div class="card-body">
+                        <h6 class="card-title">Faculty Name: {{ i.name }}</h6>
+                        <h6 class="card-title">Faculty Email: {{ i.email }}</h6>
+                        <h6 class="card-title">Branch: {{ i.branch }}</h6>
+                        <h6 class="card-title">Semester : {{i.semester}}</h6>
+                        <h6 class="card-title">Year : {{i.year}}</h6>
+                        <h6 class="card-title">Contact : {{i.contact}}</h6>
+                        <a href="{% url 'staffresetpassword' %}" class="btn btn-success">Reset password</a>
+                    </div>
+                </center>
+            </div>
+            {% endfor %}
+        </center>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

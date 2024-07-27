@@ -1,0 +1,59 @@
+{% extends "adminhome.html" %}
+{% block content %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="card-img-overlay">
+    <a href="{% url 'download_details' %}" class="btn btn-primary">Download Details</a>
+    <div class="row">
+
+
+
+        {% for i in add_students %}
+        <div class="card" style="width:20rem;">
+            <img src="/static/profiles/{{i.profilename}}" class="card-img-top" alt="..."
+                style="width:294px;height:196px;border-radius:100px;">
+            <div class="card-body">
+                <h6 class="card-title">Student Name: {{ i.name }}</h6>
+                <h6 class="card-title">Student Email: {{ i.email }}</h6>
+                <h6 class="card-title">Roll Number: {{ i.rollnumber }}</h6>
+                <h6 class="card-title">Branch: {{ i.branch }}</h6>
+                <h6 class="card-title">Semester : {{i.semester}}</h6>
+                <h6 class="card-title">Year : {{i.year}}</h6>
+                <h6 class="card-title">Contact : {{i.contact}}</h6>
+                <h6 class="card-title">Room Number : {{i.RoomNo}}</h6>
+                <h6 class="card-title">Bench Number : {{i.BenchNo}}</h6>
+                <h6 class="card-title">Seat Number : {{i.SeatNumber}}</h6>
+
+
+
+                <center><a href="{% url 'delete' i.id %}" class="btn btn-danger">Delete</a></center>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

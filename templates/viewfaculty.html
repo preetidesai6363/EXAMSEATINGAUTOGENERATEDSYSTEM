@@ -1,0 +1,54 @@
+{% extends "adminhome.html" %}
+{% block content %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="card-img-overlay">
+
+    <div class="row">
+        {% for i in all_faculties %}
+        <div class="card" style="width:20rem;">
+            <img src="/static/faculty/{{i.profilename}}" class="card-img-top" alt="..."
+                style="width:294px;height:196px;border-radius:100px;">
+            <div class="card-body">
+                <h6 class="card-title">Faculty Name: {{ i.name }}</h6>
+                <h6 class="card-title">Faculty Email: {{ i.email }}</h6>
+                <h6 class="card-title">Contact : {{i.contact}}</h6>
+
+                <h6 class="card-title">Branch: {{ i.branch }}</h6>
+                <h6 class="card-title">Semester : {{i.semester}}</h6>
+                <h6 class="card-title">Year : {{i.year}}</h6>
+
+
+
+
+                <center><a href="{% url 'delete' i.id %}" class="btn btn-danger">Delete</a></center>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
